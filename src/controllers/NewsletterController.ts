@@ -4,17 +4,8 @@ import { NewsletterService } from '../services/NewsletterService'
 import { body, validationResult } from 'express-validator'
 
 const NewsletterValidator = [
-  body('name')
-    .notEmpty()
-    .trim()
-    .escape()
-    .isLength({ max: 50 }),
-  body('phone')
-    .optional({ nullable: true })
-    .isMobilePhone('pt-BR')
-    .withMessage(
-      'Customer phone number need be as valid number, like: +559999999999'
-    ),
+  body('name').notEmpty().trim().escape().isLength({ max: 50 }),
+  body('phone').optional({ nullable: true }).trim(),
   body('email')
     .optional({ nullable: true })
     .isLength({ max: 100 })

@@ -13,12 +13,7 @@ const CustomerValidator = [
   body('phone')
     .notEmpty()
     .withMessage('Customer phone number is required')
-    .isMobilePhone('pt-BR')
-    .withMessage(
-      'Customer phone number need be as valid number, like: +559999999999'
-    )
-    .trim()
-    .escape(),
+    .trim(),
   body('email')
     .isEmail()
     .withMessage('Customer email is invalid')
