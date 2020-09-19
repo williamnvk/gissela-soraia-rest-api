@@ -1,0 +1,13 @@
+//.gitignore
+
+node_modules
+package-lock.json
+data
+dist
+build
+
+# src/**/*.js
+src/**/*.map
+coverage
+
+.env

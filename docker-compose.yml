@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: gissela_soraia_rest_api
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./data/gissela_soraia_app:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=gissela_soraia_app
+    ports:
+      - 27017:27017
